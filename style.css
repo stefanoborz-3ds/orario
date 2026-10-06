@@ -1,0 +1,101 @@
+/* Reset di base e font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    color: #2c3e50;
+    margin: 0;
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: #0b4f6c;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: #0b4f6c;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.orario {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 95%;
+    max-width: 1100px;
+    background-color: #ffffff;
+    border: 3px dashed #0b4f6c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #e1e8ed;
+    background-color: #ffffff;
+}
+
+.titolo-orario {
+    background-color: #0b4f6c;
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px;
+}
+
+.intestazione-giorni th {
+    background-color: #1f6f8b;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.ora {
+    font-weight: bold;
+    background-color: #eaeff2 !important;
+    color: #0b4f6c;
+    white-space: nowrap;
+}
+
+.intervallo {
+    background-color: #ffeaa7 !important;
+    font-weight: bold;
+    color: #d63031;
+    letter-spacing: 2px;
+}
+
+.pranzo {
+    background-color: #f38bf1 !important;
+    color: #8c007e;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.invis {
+    background-color: #edf2f7 !important;
+    color: #a0aec0;
+    border: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 35px;
+    color: #718096;
+    font-size: 14px;
+}
