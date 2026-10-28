@@ -7,46 +7,27 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="orario">
-  <header class="bar">
-    <h1>Orario 3DS · 2026/27</h1>
-    <div class="grp">
-      <button id="prev" aria-label="Settimana precedente">◀</button>
-      <span id="wk" class="wk"></span>
-      <button id="next" aria-label="Settimana successiva">▶</button>
-      <button id="today">Oggi</button>
-    </div>
-    <div class="grp">
-      <button id="add" class="primary">+ Nuovo blocco</button>
-      <button id="reset">Ripristina base</button>
-    </div>
-  </header>
-
-  <div class="wrap" id="wrap">
-    <div class="cal" id="cal"></div>
+<header>
+  <h1>Orario 3DS · 2026/27</h1>
+  <div class="row">
+    <button id="prev">◀</button><span class="wk" id="wk"></span><button id="next">▶</button>
+    <button id="today">Oggi</button>
   </div>
-
-  <p class="hint">Trascina i blocchi per spostarli, tira il bordo in basso per cambiare la durata, tocca un blocco per modificarlo.</p>
-  <h2 class="lab">Blocchi liberi</h2>
-  <div class="tray" id="tray"></div>
-</main>
+  <div class="row"><button class="p" id="add">+ Nuovo blocco</button><button id="reset">Ripristina base</button></div>
+</header>
+<div class="scroll"><div class="grid" id="grid"></div></div>
+<div class="lab">Blocchi liberi: trascinali sull’orario (trascina un blocco qui per toglierlo). Doppio clic per modificare.</div>
+<div class="tray" id="tray"></div>
 
 <dialog id="dlg">
-  <label>Testo<input type="text" id="dt"></label>
-  <label>Nota (facoltativa)<input type="text" id="dn" placeholder="es. verifica, aula 12"></label>
-  <label>Giorno<select id="dd"></select></label>
-  <div class="two">
-    <label>Inizio<input type="time" id="ds" step="600" min="06:00" max="23:00"></label>
-    <label>Fine<input type="time" id="de" step="600" min="06:00" max="23:00"></label>
-  </div>
-  <div class="lbl">Colore</div>
-  <div class="sw" id="sw"></div>
-  <div class="acts">
+  <label>Testo</label><input type="text" id="dt">
+  <label>Nota (opzionale)</label><input type="text" id="dn" placeholder="es. verifica, aula 12">
+  <label>Colore</label><div class="sw" id="sw"></div>
+  <div class="row" style="margin-top:14px;justify-content:space-between">
     <button id="del">Elimina</button>
-    <span><button id="cx">Annulla</button> <button id="ok" class="primary">Salva</button></span>
+    <span class="row"><button id="cx">Annulla</button><button class="p" id="ok">Salva</button></span>
   </div>
 </dialog>
-
 <script src="script.js"></script>
 </body>
 </html>
