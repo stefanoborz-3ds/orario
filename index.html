@@ -1,102 +1,52 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Orario Scolastico 3DS</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orario 3DS</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Orario Scolastico 2026/27 3DS</h1>
-        <hr>
-    </header>
-
-    <div class="orario">
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="6" class="titolo-orario">Orario 3DS</th>
-                </tr>
-                <tr class="intestazione-giorni">
-                    <th>Orario/Giorni</th>
-                    <th>Lunedì</th>
-                    <th>Martedì</th>
-                    <th>Mercoledì</th>
-                    <th>Giovedì</th>
-                    <th>Venerdì</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="ora">7:50-8:40</td>
-                    <td rowspan="2">Italiano</td>
-                    <td rowspan="3">Informatica</td>   
-                    <td>Inglese</td> 
-                    <td>Italiano</td>
-                    <td rowspan="2">Informatica</td>
-                </tr>
-                <tr>
-                    <td class="ora">8:40-9:30</td>
-                    <td rowspan="2">Telecomunicazioni</td>
-                    <td>Storia</td>
-                </tr>
-                <tr>
-                    <td class="ora">9:30-10:20</td>
-                    <td>Tedesco</td>
-                    <td>Inglese</td>
-                    <td>Inglese</td>
-                </tr>
-                <tr class="intervallo">
-                    <td class="ora">10:20-10:30</td>
-                    <td colspan="5">INTERVALLO</td>
-                </tr>
-                <tr>
-                    <td class="ora">10:30-11:20</td>
-                    <td>Matematica</td>
-                    <td>Matematica</td>
-                    <td>Tedesco</td>
-                    <td rowspan="2">Matematica</td>
-                    <td>Religione</td>
-                </tr>
-                <tr>
-                    <td class="ora">11:20-12:10</td>
-                    <td>Informatica</td>
-                    <td rowspan="2">Motoria</td>
-                    <td>Italiano</td>
-                    <td rowspan="2">Sistemi e reti</td>
-                </tr>
-                <tr>
-                    <td class="ora">12:10-13:00</td>
-                    <td>Telecomunicazioni</td>
-                    <td>Storia</td>
-                    <td>Sistemi e reti</td>
-                </tr>
-                <tr>
-                    <td class="ora">13:00-13:50</td>
-                    <td class="pranzo">Pausa Pranzo</td>
-                    <td class="invis" colspan="3"></td>
-                    <td class="pranzo">Pausa Pranzo</td>
-                </tr>
-                <tr>
-                    <td class="ora">13:50-14:40</td>
-                    <td>Sistemi e reti</td>
-                    <td class="invis" colspan="3" rowspan="3"></td>
-                    <td>TPSIT</td>
-                </tr>
-                <tr>
-                    <td class="ora">14:40-15:30</td>
-                    <td rowspan="2">TPSIT</td>
-                    <td>Matematica</td>
-                </tr>
-                <tr>
-                    <td class="ora">15:30-16:20</td>
-                </tr>
-            </tbody>
-        </table>
+<main class="orario">
+  <header class="bar">
+    <h1>Orario 3DS · 2026/27</h1>
+    <div class="grp">
+      <button id="prev" aria-label="Settimana precedente">◀</button>
+      <span id="wk" class="wk"></span>
+      <button id="next" aria-label="Settimana successiva">▶</button>
+      <button id="today">Oggi</button>
     </div>
+    <div class="grp">
+      <button id="add" class="primary">+ Nuovo blocco</button>
+      <button id="reset">Ripristina base</button>
+    </div>
+  </header>
 
-    <footer>
-        <p><small>Stefano Borz - Classe 3DS</small></p>
-    </footer>
+  <div class="wrap" id="wrap">
+    <div class="cal" id="cal"></div>
+  </div>
+
+  <p class="hint">Trascina i blocchi per spostarli, tira il bordo in basso per cambiare la durata, tocca un blocco per modificarlo.</p>
+  <h2 class="lab">Blocchi liberi</h2>
+  <div class="tray" id="tray"></div>
+</main>
+
+<dialog id="dlg">
+  <label>Testo<input type="text" id="dt"></label>
+  <label>Nota (facoltativa)<input type="text" id="dn" placeholder="es. verifica, aula 12"></label>
+  <label>Giorno<select id="dd"></select></label>
+  <div class="two">
+    <label>Inizio<input type="time" id="ds" step="600" min="06:00" max="23:00"></label>
+    <label>Fine<input type="time" id="de" step="600" min="06:00" max="23:00"></label>
+  </div>
+  <div class="lbl">Colore</div>
+  <div class="sw" id="sw"></div>
+  <div class="acts">
+    <button id="del">Elimina</button>
+    <span><button id="cx">Annulla</button> <button id="ok" class="primary">Salva</button></span>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
 </body>
 </html>
